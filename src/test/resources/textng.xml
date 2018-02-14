@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Demo Test suite" allow-return-values="true"  >
+    <test name="demo" preserve-order="true" allow-return-values="true" >
+        <classes>
+            <class name="com.fa.demo.utils.Launch"/>
+        </classes>
+    </test>
+</suite>
