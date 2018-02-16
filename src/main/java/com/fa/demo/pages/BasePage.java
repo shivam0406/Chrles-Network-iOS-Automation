@@ -49,7 +49,7 @@ public class BasePage {
 
     public void setValueswithHideKeyboard(By locator, String values){
         WebElement element = driver.findElement(locator);
-        element.click();
+        //element.click();
         element.sendKeys(values);
         driver.hideKeyboard();
     }

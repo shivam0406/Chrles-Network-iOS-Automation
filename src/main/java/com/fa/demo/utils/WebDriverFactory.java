@@ -1,6 +1,7 @@
 package com.fa.demo.utils;
 
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import com.fa.demo.AppProperties;
 import java.io.File;
@@ -27,17 +28,19 @@ public class WebDriverFactory {
 
     public static IOSDriver createIOSDriver(AppProperties appProperties) throws MalformedURLException {
 
-        File app = new File(appProperties.getAppDir(), appProperties.getAppName());
+        //File app = new File(appProperties.getAppDir(), appProperties.getAppName());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformVersion", appProperties.getPlatformVersion());
         capabilities.setCapability("deviceName", appProperties.getDeviceName());
-        capabilities.setCapability("app", "Settings"  );
+        capabilities.setCapability("app", appProperties.getAppName()  );
         capabilities.setCapability("udid", appProperties.getUdid());
         capabilities.setCapability("platformName", appProperties.getPlatformName());
         capabilities.setCapability("showIOSLog", appProperties.showIOSLog());
         capabilities.setCapability("automationName", appProperties.getAutomationName());
         capabilities.setCapability("bundleId", appProperties.getBundleId());
+        capabilities.setCapability("browser", appProperties.getBrowser());
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, appProperties.getBrowser());
 //		capabilities.setCapability("noReset", true);
 //		capabilities.setCapability("fullReset", false);
         capabilities.setCapability("newCommandTimeout", appProperties.getNewCommandTimeOut());

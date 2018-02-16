@@ -7,7 +7,8 @@ import java.util.Properties;
 
 public class AppProperties {
 
-    private static final String PROPERTY_FILE_PATH = "./src/test/resources/config/";
+    private static final String PROPERTY_FILE_PATH = "/Users/shivamgupta/Desktop/throttling/src/test/resources/config/"
+    ;
 
     //Default values
     private String PLATFORM_NAME ;
@@ -24,6 +25,7 @@ public class AppProperties {
     private boolean showIOSLog;
     private String deviceName;
     private int newCommandTimeOut;
+    private String browser;
 
 
     public String getUdid(){
@@ -32,6 +34,14 @@ public class AppProperties {
 
     public void setUdid(String udid) {
         this.udid = udid;
+    }
+
+    public String getBrowser(){
+        return browser;
+    }
+
+    public void setBrowser(String browser) {
+        this.browser = browser;
     }
 
     public String getScreenMode() {
@@ -148,6 +158,7 @@ public class AppProperties {
         setPlatformVersion(prop.getProperty("platformVersion"));
         setDeviceName(prop.getProperty("deviceName"));
         setBundleId(prop.getProperty("bundleId"));
+        setBrowser(prop.getProperty("browser"));
     }
 
     public void loadCredentilsProperties(String propertyFileName) throws IOException {

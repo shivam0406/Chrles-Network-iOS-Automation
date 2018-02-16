@@ -4,6 +4,7 @@
     <test name="demo" preserve-order="true" allow-return-values="true" >
         <classes>
             <class name="com.fa.demo.utils.Launch"/>
+            <class name="com.fa.demo.utils.LaunchSafari"/>
         </classes>
     </test>
 </suite>
